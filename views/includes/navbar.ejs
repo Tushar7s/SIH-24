@@ -1,0 +1,199 @@
+<div class="nav1">
+  <div class="nav1_logo">
+    <a
+      href="https://www.instagram.com/divyalokwani_?igsh=bW9hNDg5MDBvZ3Jo"
+      class="socialmedia"
+      ><i class="fa-brands fa-instagram fa-x"></i
+    ></a>
+    <a href="https://www.linkedin.com/in/divya-lokwani/" class="socialmedia"
+      ><i class="fa-brands fa-linkedin fa-x"></i
+    ></a>
+    <a
+      href="https://x.com/thejulykid_?t=jHfzBpADBLpCucV0zTBhZQ&s=09"
+      class="socialmedia"
+      ><i class="fa-brands fa-x-twitter fa-x"></i
+    ></a>
+    <a href="https://github.com/divya-0807" class="socialmedia"
+      ><i class="fa-brands fa-github fa-x"></i
+    ></a>
+  </div>
+  <div class="nav1_links">
+    <ul>
+      <li><a href="#">Disclaimer</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#myprojects">Contact</a></li>
+      <%if(!currUser){%>
+        <li><a href="/login">Log-in</a></li>
+        <%}%>
+        <%if(currUser){%>
+          <li><a href="/logout">Log-Out</a></li>
+          <%}%>
+    </ul>
+  </div>
+</div>
+
+<!-- search vaala nav -->
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark"
+  aria-label="Offcanvas navbar large"
+>
+  <div class="container-fluid">
+    <img src="delhi_logo.png" alt="" class="nav2_logo" />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar2"
+      aria-controls="offcanvasNavbar2"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end text-bg-dark"
+      tabindex="-1"
+      id="offcanvasNavbar2"
+      aria-labelledby="offcanvasNavbar2Label"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <form class="d-flex mt-3 mt-lg-0" role="Search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search Hospitals"
+              aria-label="Search"
+            />
+            <button class="search_button btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <li class="nav-item">
+            <div class="emergency">
+              <div class="em1">Emergency</div>
+              <div class="em2">
+                <a href="tel:+91 94254885504"
+                  >Call <i class="fa-solid fa-phone"></i
+                ></a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="emergency">
+              <div class="em1">LifeLine</div>
+              <div class="em2">
+                <a href="tel:+91 94254885504"
+                  >Call <i class="fa-solid fa-phone"></i
+                ></a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#"></a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- dropdownvaaaelement -->
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid nav3_dropdown">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <li class="nav-item dropdown dropdown1">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+  </div>
+</nav>
