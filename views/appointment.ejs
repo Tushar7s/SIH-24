@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<form id="appointmentForm" method="post" action="/book-appointment">
+    <input type="number" id="age" name="age" placeholder="enter age">
+    <br>
+    <input type="text" id="gender" name="gender" placeholder="enter gender">
+    <br>
+    <input type="number" id="mobile" name="mobile" placeholder="enter mobile NO.">
+    <br>
+    <label for="startTime">Choose an appointment time:</label>
+    <select id="startTime" name="startTime" required>
+        <% availableSlots.forEach(slot => { %>
+            <option value="<%= slot.start.toISOString() %>" <%= slot.booked ? 'disabled' : '' %>>
+                <%= slot.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) %> - 
+                <%= slot.end.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) %>
+            </option>
+        <% }) %>
+    </select>
+
+    <button type="submit">Book Appointment</button>
+</form>
+
+
+

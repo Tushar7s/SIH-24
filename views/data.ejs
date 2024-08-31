@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+<%for(let i = 0; i < hospital.medicine.length && hospital.medicine; i++){%>
+    <% if (hospital.medicine[i].stock <= 500) { %>
+        <div id="Alert" style="display: block;">Stock is low for Medicine:
+            <br>
+           <b>Medicine Name :</b> <%=hospital.medicine[i].name %>
+           <b>Medicine Code: </b> <%= hospital.medicine[i].code %>
+        </div>
+    <% } else { %>
+        <div id="Alert" style="display: none;">Stock is sufficient.</div>
+    <% } %>
+    <%}%>
+<div class="tusharr">
+    <div class="block">
+        <h2>Beds and OPD Records</h2>
+        <table class="bed_info">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>age</th>
+                    <th>Gender</th>
+                    <th>Beds Available</th>
+                    <th>OPDs Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(let i = 0; i < hospital.patient.length; i++){%> 
+                <tr>
+                    <td><%= hospital.patient[i].name %></td>
+                    <td><%= hospital.patient[i].date %></td>
+                    <td> <%= hospital.patient[i].age %></td>
+                    <td><%= hospital.patient[i].gender %></td>
+                    <td><%= hospital.beds %></td>
+                    <td><%= hospital.opd %></td>
+                    <td><form method="post" action="/hospital/<%=hospital.id%>/patient/<%=hospital.patient[i].id%>/delete?_method=DELETE">
+                        <button class="btn btn-dark offset-3">DELETE</button>
+                    </form></td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block">
+        <h2>Medicine Record</h2>
+        <table class="med_info">
+            <thead>
+                <tr>
+                    <th>SNo</th>
+                    <th>Medicine ID</th>
+                    <th>Medicine Name</th>
+                    <th>Quantity</th>
+                    <th>Expiry</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(let i = 0; i < hospital.medicine.length; i++){%>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= hospital.medicine[i].code %></td>
+                    <td><%= hospital.medicine[i].name %></td>
+                    <td><%= hospital.medicine[i].stock %></td>
+                    <td><%= hospital.medicine[i].expiry %></td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+</div>

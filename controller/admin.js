@@ -1,5 +1,5 @@
 const Admin = require("../models/admin.js");
-
+const Hospital = require("../models/hospital.js");
 module.exports.getLoginForm = async(req, res) => {
     res.render("admin/login.ejs");
 }
@@ -17,7 +17,7 @@ module.exports.registerAdmin = async(req, res) => {
         if (err) {
             return next(err);
         }
-        res.redirect("/map");
+        res.redirect("/");
     })
 }
 module.exports.loginUser = async (req, res) => {
@@ -25,7 +25,7 @@ module.exports.loginUser = async (req, res) => {
     if (res.locals.redirectUrl) {
         res.redirect(res.locals.redirectUrl);
     }else {
-        res.redirect("/map");
+        res.redirect("/portal");
     }
 }
 

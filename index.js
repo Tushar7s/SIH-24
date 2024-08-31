@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require("express-session");
+const methodOverride = require('method-override');
 const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
@@ -20,7 +21,7 @@ const Admin = require("./models/admin.js");
 // Routes
 const adminRouter = require("./routes/admin.js");
 const hospitalRouter = require("./routes/hospital.js");
-
+const appointmentRouter = require("./routes/appointment.js");
 // Database connection
 mongoose.connect("mongodb://127.0.0.1:27017/SIH")
     .then(() => console.log("Connection successful"))
@@ -29,7 +30,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/SIH")
 // App setup
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.engine("ejs", ejsMate);
@@ -69,9 +70,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', adminRouter);
 app.use('/', hospitalRouter);
-app.get("/", (req, res) => {
-    res.send("Welcome to our website");
-});
+app.use("/", appointmentRouter);
 
 
 
